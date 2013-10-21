@@ -75,7 +75,7 @@ Table of Contents
    3.  TLV format . . . . . . . . . . . . . . . . . . . . . . . . . .  3
      3.1.  Per-node Admin Tag TLV . . . . . . . . . . . . . . . . . .  3
      3.2.  Ordering of tags . . . . . . . . . . . . . . . . . . . . .  3
-   4.  Applications . . . . . . . . . . . . . . . . . . . . . . . . .  3
+   4.  Applications . . . . . . . . . . . . . . . . . . . . . . . . .  4
    5.  Security Considerations  . . . . . . . . . . . . . . . . . . .  4
    6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . .  4
    7.  Acknowledgments  . . . . . . . . . . . . . . . . . . . . . . .  4
@@ -158,6 +158,12 @@ Internet-Draft  Advertising Per-node Admin Tags in IS-IS    October 2013
             administrative tags.
    
 
+   The 'Per-node Admin Tag' TLV may be generated more than once by an
+   originating router.  This MAY happen if a node carries more than 63
+   per-node admin groups and a single TLV does not provide sufficient
+   space.  As such occurence of the 'Per-node Admin Tag' TLV does not
+   cancel previous TLV announcements, but rather is cumulative.
+
 3.2.  Ordering of tags
 
    The semantics of the tag order are implementation-dependent.  There
@@ -165,17 +171,18 @@ Internet-Draft  Advertising Per-node Admin Tags in IS-IS    October 2013
    certain operation or set of operations that need to be performed
    based on the ordering.
 
+
+Sarkar, Gredler, Hegde & ExpireseApril 19, 2014                 [Page 3]
+
+Internet-Draft  Advertising Per-node Admin Tags in IS-IS    October 2013
+
+
    Each tag SHOULD be treated as an independent identifier that MAY be
    used in policy to perform a policy action.  Whether or not tag A
    precedes or succeeds tag B SHOULD not change the meaning of the tag
    set.
 
 4.  Applications
-
-Sarkar, Gredler, Hegde & ExpireseApril 19, 2014                 [Page 3]
-
-Internet-Draft  Advertising Per-node Admin Tags in IS-IS    October 2013
-
 
    Increased deployment of Loop Free Alternates (LFA) [RFC5286] has
    exposed some limitations.  A recent draft on Operation management of
@@ -224,17 +231,16 @@ Internet-Draft  Advertising Per-node Admin Tags in IS-IS    October 2013
               Internet-Draft draft-litkowski-rtgwg-lfa-manageability-01,
               February 2013.
 
+Sarkar, Gredler, Hegde & ExpireseApril 19, 2014                 [Page 4]
+
+Internet-Draft  Advertising Per-node Admin Tags in IS-IS    October 2013
+
+
    [RFC1195]  Callon, R., "Use of OSI IS-IS for routing in TCP/IP and
               dual environments", RFC 1195, December 1990.
 
    [RFC5286]  Atlas, A. and A. Zinin, "Basic Specification for IP Fast
               Reroute: Loop-Free Alternates", RFC 5286, September 2008.
-
-
-Sarkar, Gredler, Hegde & ExpireseApril 19, 2014                 [Page 4]
-
-Internet-Draft  Advertising Per-node Admin Tags in IS-IS    October 2013
-
 
    [RFC5305]  Li, T. and H. Smit, "IS-IS Extensions for Traffic
               Engineering", RFC 5305, October 2008.
@@ -275,12 +281,6 @@ Authors' Addresses
    India
    
    Email: hraghuveer@juniper.net
-
-
-
-
-
-
 
 
 

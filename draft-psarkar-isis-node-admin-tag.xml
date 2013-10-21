@@ -75,7 +75,7 @@
     </author>
 
 
-    <date day="18" month="October" year="2013" />
+    <date day="21" month="October" year="2013" />
 
     <area>Routing</area>
     <workgroup>IS-IS for IP Internets</workgroup>
@@ -172,6 +172,13 @@
 
       </artwork>
     </figure>
+    <t>
+      The 'Per-node Admin Tag' TLV may be generated more than once by an originating
+      router. This MAY happen if a node carries more than 63 per-node admin groups
+      and a single TLV does not provide sufficient space.
+      As such occurence of the 'Per-node Admin Tag' TLV does not cancel previous
+      TLV announcements, but rather is cumulative.
+    </t>
 </section>
 
 <section title='Ordering of tags'>
