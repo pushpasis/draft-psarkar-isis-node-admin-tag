@@ -74,6 +74,27 @@
       </address>
     </author>
 
+    <author fullname="Stephane Litkowski" initials="S" surname="Litkowski">
+      <organization>Orange</organization>
+      <address>
+        <!-- postal><street/><city/><region/><code/><country/></postal -->
+        <!-- <phone/> -->
+        <!-- <facsimile/> -->
+        <email>stephane.litkowski@orange.com</email>
+        <!-- <uri/> -->
+      </address>
+    </author>
+
+    <author fullname="Bruno Decraene" initials="B" surname="Decraene">
+      <organization>Orange</organization>
+      <address>
+        <!-- postal><street/><city/><region/><code/><country/></postal -->
+        <!-- <phone/> -->
+        <!-- <facsimile/> -->
+        <email>bruno.decraene@orange.com</email>
+        <!-- <uri/> -->
+      </address>
+    </author>
 
     <date day="21" month="October" year="2013" />
 
