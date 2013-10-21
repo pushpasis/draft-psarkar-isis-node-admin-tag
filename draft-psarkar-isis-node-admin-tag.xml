@@ -86,7 +86,7 @@
     <keyword>Traffic Engineering</keyword>
 
     <abstract>
-      <t> This document describes an extension to IS-IS protocol <xref target="RFC1142"/>,  
+      <t> This document describes an extension to IS-IS protocol <xref target="ISO10589"/>,  
       <xref target="RFC1195"/> to add an optional operational capability, that allows 
       tagging and grouping ofthe nodes in an IS-IS domain. This allows simple management 
       and easy control over route and path selection, based on local configured policies. 
@@ -130,7 +130,7 @@
     </t>
 
     <t> The new TLV defined will be carried as a new TLV in the Link State PDUs originated 
-    by the router. Link State PDUs <xref target="RFC1142"/> has level-wise (i.e. L1 or L2)
+    by the router. Link State PDUs <xref target="ISO10589"/> has level-wise (i.e. L1 or L2)
     flooding scope. Choosing the flooding scope to flood the group tags are defined by the 
     policies and is a local matter. Once a group tag is decided in a specific level the 
     same will be inserted in the administrative tag TLV in the Link State PDU for the 
@@ -209,7 +209,7 @@
 
     <t>
     This document does not introduce any further security issues other than those discussed 
-    in <xref target="RFC1142"/> and <xref target="RFC1195"/>.
+    in <xref target="ISO10589"/> and <xref target="RFC1195"/>.
     </t>
 
 </section>
@@ -229,12 +229,22 @@
 </middle>
 
 <back>
-<references title='Normative References'>
-  <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?>
-</references>
+  <references title='Normative References'>
+    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?>
+
+    <reference anchor="ISO10589">
+        <front>
+          <title>Intermediate system to Intermediate system intra-domain
+          routeing information exchange protocol for use in conjunction with
+          the protocol for providing the connectionless-mode Network Service
+          (ISO 8473), ISO/IEC 10589:2002, Second Edition.</title>
+          <author fullname="ISO &quot;International Organization for Standardization&quot;"/>
+          <date month="Nov" year="2002"/>
+        </front>
+    </reference>  
+  </references>
 
 <references title='Informative References'>
-   <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.1142.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.1195.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5286.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5305.xml"?>
