@@ -110,8 +110,8 @@
     <t> This document provides mechanisms to advertise per-node administrative tags 
     in the IS-IS Link State PDU <xref target="RFC1195"/>. In certain path-selection 
     applications like for example in traffic-engineering or LFA <xref target="RFC5286"/> 
-    backup selection there is a need to tag the nodes based on their roles in the  
-    network and have policies to prefer or prune a certain group of nodes.
+    selection there is a need to tag the nodes based on their roles in the  network 
+    and have policies to prefer or prune a certain group of nodes.
     </t>
 </section>
 
@@ -134,7 +134,9 @@
     flooding scope. Choosing the flooding scope to flood the group tags are defined by the 
     policies and is a local matter. Once a group tag is decided in a specific level the 
     same will be inserted in the administrative tag TLV in the Link State PDU for the 
-    same level.
+    same level. Implementations should allow configuring both a 'global' and 'per-level' 
+    admin tag. In the absence of a specific admin tag configuration for a specific level 
+    the global admin tag should be copied in to the LSP PDU for the same level.
     </t>
 
 </section>
