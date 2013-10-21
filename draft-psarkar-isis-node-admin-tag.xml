@@ -198,9 +198,9 @@
     <t>
       The 'Per-node Admin Tag' TLV may be generated more than once by an originating
       router. This MAY happen if a node carries more than 63 per-node admin groups
-      and a single TLV does not provide sufficient space.
-      As such occurence of the 'Per-node Admin Tag' TLV does not cancel previous
-      TLV announcements, but rather is cumulative.
+      and a single TLV does not provide sufficient space. As such occurence of the 
+      'Per-node Admin Tag' TLV does not cancel previous TLV announcements, but rather 
+      is cumulative.
     </t>
 </section>
 
@@ -220,7 +220,7 @@
 <section title='Applications'>
     <t> Increased deployment of Loop Free Alternates (LFA) <xref target="RFC5286"/> has 
     exposed some limitations. A recent draft on Operation management of Loop Free Alternates 
-    <xref target="I-D.litkowski-rtgwg-lfa-manageability"/> proposes refinements to address 
+    <xref target="I-D.ietf-rtgwg-lfa-manageability"/> proposes refinements to address 
     those limitations. One of the proposed refinements is to be able to group the nodes in 
     IGP domain with administrative tags and engineer the alternate paths based on configured 
     policies.
@@ -278,7 +278,7 @@
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.1195.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5286.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5305.xml"?>
-   <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-litkowski-rtgwg-lfa-manageability-01.xml"?>
+   <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-rtgwg-lfa-manageability-01.xml"?>
 </references>
 </back>
 </rfc>
