@@ -10,7 +10,7 @@
 <?rfc inline="yes"?>
 <?rfc compact="yes"?>
 <?rfc subcompact="no"?>
-<rfc category="std" docName="draft-psarkar-isis-node-admin-tag-00" ipr="trust200902">
+<rfc category="std" docName="draft-psarkar-isis-node-admin-tag-01" ipr="trust200902">
 
   <!-- ***** FRONT MATTER ***** -->
 
@@ -96,7 +96,7 @@
       </address>
     </author>
 
-    <date day="21" month="October" year="2013" />
+    <date day="14" month="February" year="2014" />
 
     <area>Routing</area>
     <workgroup>IS-IS for IP Internets</workgroup>
@@ -136,25 +136,28 @@
     </t>
 </section>
 
-<section title='Administrative Tag TLV'>
-    <t> For the purpose of advertising per-node administrative tags within IS-IS, 
-    a new TLV is proposed. Because path selection is a functional set which  
+<section title='Administrative Tag'>
+    <t>For the purpose of advertising per-node administrative tags within IS-IS, 
+    a new sub-TLV to the IS-IS Router Capability TLV-242 that is defined in <xref
+    target="RFC4971"/> is proposed.
+    Because path selection is a functional set which  
     applies both to TE and non-TE applications the same has not added as a new  
     sub-TLV in the Traffic Engingineering TLVs <xref target="RFC5305"/>.
     </t>
 
     <t> An administrative Tag is a 32-bit integer value that can be used to identify 
-    a group of nodes in the IS-IS domain. The new TLV specifies one or more administrative 
+    a group of nodes in the IS-IS domain. The new sub-TLV specifies one or more administrative 
     tag values. An IS-IS node advertises the set of groups it is part of in the specific 
     IS-IS level. As an example, all PE-nodes may be configured with certain tag value, 
     whereas all P-nodes are configured with a different tag value in.
     </t>
 
-    <t> The new TLV defined will be carried as a new TLV in the Link State PDUs originated 
+    <t>The new sub-TLV defined will be carried inside the IS-IS Router Capability TLV-242
+    (defined in <xref target="RFC4971"/>) in the Link State PDUs originated 
     by the router. Link State PDUs <xref target="ISO10589"/> has level-wise (i.e. L1 or L2)
     flooding scope. Choosing the flooding scope to flood the group tags are defined by the 
     policies and is a local matter. Once a group tag is decided in a specific level the 
-    same will be inserted in the administrative tag TLV in the Link State PDU for the 
+    same will be inserted in the administrative tag sub-TLV in the Link State PDU for the 
     same level. Implementations should allow configuring both a 'global' and 'per-level' 
     admin tag. In the absence of a specific admin tag configuration for a specific level 
     the global admin tag should be copied in to the LSP PDU for the same level.
@@ -163,12 +166,12 @@
 </section>
 
 <section title='TLV format'>
-  <section title='Per-node Admin Tag TLV'>
-    <t>The new Administrative Tag TLV, like other ISIS TLVs, is formatted as Type/Length/Value 
-    (TLV)triplets. <xref target="isisadmintagtlv"/> below shows the format of the new TLV.
+  <section title='Per-node Admin Tag sub-TLV'>
+    <t>The new Administrative Tag sub-TLV, like other ISIS Capability sub-TLVs, is formatted as Type/Length/Value 
+    (TLV)triplets. <xref target="isisadmintagtlv"/> below shows the format of the new sub-TLV.
     </t>
 
-    <figure anchor="isisadmintagtlv" title="IS-IS per-node Administrative Tag TLV">
+    <figure anchor="isisadmintagtlv" title="IS-IS per-node Administrative Tag sub-TLV">
       <artwork>
   0                   1                   2                   3
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -196,10 +199,10 @@
       </artwork>
     </figure>
     <t>
-      The 'Per-node Admin Tag' TLV may be generated more than once by an originating
+      The 'Per-node Admin Tag' sub-TLV may be generated more than once by an originating
       router. This MAY happen if a node carries more than 63 per-node admin groups
-      and a single TLV does not provide sufficient space. As such occurence of the 
-      'Per-node Admin Tag' TLV does not cancel previous TLV announcements, but rather 
+      and a single sub-TLV does not provide sufficient space. As such occurence of the 
+      'Per-node Admin Tag' sub-TLV does not cancel previous announcements, but rather 
       is cumulative.
     </t>
 </section>
@@ -246,8 +249,8 @@
 
 <section anchor="IANA" title="IANA Considerations">
 
-    <t>IANA maintains the registry for the TLVs. IS-IS Administrative Tags
-    will require one new type code for the TLV defined in this document.
+    <t>IANA maintains the registry for the Router Capability sub-TLVs. IS-IS Administrative Tags
+    will require one new type code for the sub-TLV defined in this document.
     </t>
 
 </section>
@@ -276,6 +279,7 @@
 
 <references title='Informative References'>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.1195.xml"?>
+   <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.4971.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5286.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.5305.xml"?>
    <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-rtgwg-lfa-manageability-00.xml"?>
